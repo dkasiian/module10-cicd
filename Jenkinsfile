@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo Processing'
+                withMaven {
+                    bat'mvn clean compile'
+                }
             }
         }
     }
