@@ -6,6 +6,17 @@ pipeline {
             description: 'Choose a build tool',
             name: 'BUILD_TOOL')
     }
+    properties {
+        promotions {
+            promotion {
+                name('QA')
+                icon('star-silver')
+                condition {
+                    selfPromotion('false')
+                }
+            }
+        }
+     }
     stages {
         stage('Build with Maven') {
             when {
