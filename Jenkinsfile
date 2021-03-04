@@ -6,7 +6,7 @@ pipeline {
             description: 'Choose a build tool',
             name: 'BUILD_TOOL')
     }
-    properties {
+    options {
         promotions {
             promotion {
                 name('QA')
