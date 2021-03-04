@@ -13,7 +13,7 @@ pipeline {
             }
             steps {
                 withMaven {
-                    bat'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
         }
@@ -22,7 +22,9 @@ pipeline {
                 expression { params.BUILD_TOOL == 'gradle' }
             }
             steps {
-                
+                withGradle {
+                    bat './gradlew build'
+                }
             }
         }
     }
